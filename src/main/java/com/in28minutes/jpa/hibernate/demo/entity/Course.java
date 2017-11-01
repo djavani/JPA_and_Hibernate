@@ -32,6 +32,13 @@ public class Course {
 	public Long getId() {
 		return id;
 	}
+
+	@Override
+	public String toString() {
+		return "Course [name=" + name + "]";
+	}
+	
+	
 	
 	
 	
