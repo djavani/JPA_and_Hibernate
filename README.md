@@ -1,0 +1,1 @@
+Aplicacao para estudo de persistencia JAVA com JPA e Hibernate, usando Springboot
