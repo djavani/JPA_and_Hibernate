@@ -1,9 +1,14 @@
 package com.in28minutes.jpa.hibernate.demo.entity;
 
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 public class Course {
@@ -12,7 +17,14 @@ public class Course {
 	@GeneratedValue
 	private Long id;
 	
+	@Column(nullable = false)
 	private String name;
+	
+	@UpdateTimestamp
+	private LocalDateTime lastUpdatedDate;
+	
+	@CreationTimestamp
+	private LocalDateTime createdDate;
 	
 	protected Course() {
 		
