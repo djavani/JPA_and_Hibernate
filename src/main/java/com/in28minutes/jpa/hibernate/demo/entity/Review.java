@@ -1,9 +1,9 @@
 package com.in28minutes.jpa.hibernate.demo.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
@@ -14,7 +14,10 @@ public class Review {
 	
 	private String rating;
 	
-	private String description;	
+	private String description;
+	
+	@ManyToOne
+	private Course course;
 	
 	protected Review() {
 		
@@ -44,6 +47,15 @@ public class Review {
 
 	public Long getId() {
 		return id;
+	}
+	
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
 	}
 
 	@Override
